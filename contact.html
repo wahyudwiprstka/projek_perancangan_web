@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngopi Yuk</title>
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/97fd3dafe5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <nav  class="navbar">
+            <a href=""><img src="./Picture/logoKopi.png" width="100px" class="bg-img"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="product.html">PRODUCTS</a></li>
+                    <li><a href="career.html">CAREER</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="aboutUs.html">ABOUT US</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+            <h1>Contact</h1>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="head">
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="isi-contact">
+            <p>Address : Ngopi Yuk<br>Jalan Mencari Cinta<br>Bali 82262 Indonesia</p>
+            <br>
+            <p>Telp    : 081122334455</p>
+            <p>email   : hrd@ngopi-yuk.com</p>
+        </div>
+        <div class="form">
+            <form action="">
+                <input type="text" placeholder="Nama">
+                <input type="email" placeholder="Email">
+                <input type="number" placeholder="No Handphone">
+                <textarea name="pesan" cols="50" rows="4" placeholder="Masukkan Pesan"></textarea>
+                <button>Kirim</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="row-ft" style="background-color: #fff;">
+          <div class="company-ft">
+              <h2>Company</h2>
+              <ul>
+                  <li><a href="aboutUs.html">About Us</a></li>
+                  <li><a href="product.html">Products</a></li>
+              </ul>
+          </div>
+
+          <div class="about-ft">
+              <h2>About</h2>
+              <ul>
+                  <li><a href="career.html">Career</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+          </div>
+
+          <div class="text-ft">
+              <h2>Ngopi Yuk</h2>
+              <p>Open from 8am - 10pm (WITA)</p>
+          </div>
+
+          <div class="logo-ft">
+             <a href="home.html"><img src="./Picture/logoKopi.png" alt="logo ngopi yuk" width="200px"></a>
+          </div>
+        </div>
+        <div class="garis"></div>
+        <div class="copyright">
+            <p>Copyright &copy 2021. Wahyu Dwi Prastika. All Right Reserved</p>
+        </div>
+    </section>
+
+
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+        window.onscroll = function(){
+            fixnavbar();
+            showProduct();
+            showProduct2();
+            showProduct3();
+        }
+
+        var navbar = document.querySelector("nav");
+        var navTop = navbar.offsetTop;
+
+        function fixnavbar(){
+            
+            if(window.pageYOffset > navTop){
+                navbar.classList.add("fixed-nav");
+            } else {
+                navbar.classList.remove("fixed-nav");
+            }
+        }
+        
+    </script>
+</body>
+</html>

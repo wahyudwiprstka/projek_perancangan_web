@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngopi Yuk</title>
+    <link rel="stylesheet" href="./css/homeStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/97fd3dafe5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <nav  class="navbar">
+            <a href=""><img src="./Picture/logoKopi.png" width="100px" class="bg-img"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="product.html">PRODUCTS</a></li>
+                    <li><a href="career.html">CAREER</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="aboutUs.html">ABOUT US</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+            <h1>Ngopi Yuk</h1>
+            <p>Ayo sudahi ngantukmu, mari ngopi bersama kami</p>
+            <a href="./product.html" class="hero-btn">Ketahui Lebih Lanjut</a>
+        </div>
+    </section>
+
+    <section class="product-preview">
+        <div class="row" id="baris1">
+          <div class="col img-col-1">
+            <img src="./Picture/americano.jpg" alt="kopi americano" width="500px">
+          </div>
+          <div class="col col-1">
+            <h1>Americano</h1>
+            <p>Caffè Americano atau Amerikano adalah minuman kopi yang dibuat dengan mencampurkan satu seloki espresso dengan air panas. Air panas yang digunakan dalam minuman ini adalah sebanyak 6 hingga 8 ons.</p>
+          </div>
+        </div>
+        <div class="row row-2" id="baris2">
+            <div class="col img-col-2">
+                <img src="./Picture/latte.jpg" alt="kopi latte" >
+            </div>
+            <div class="col col-2">
+                <h1>Latte</h1>
+              <p>Latte atau Caffè latte (Bahasa Italia yang artinya kopi susu) adalah espresso atau kopi yang dicampur dengan susu dan memiliki lapisan busa yang tipis di bagian atasnya.</p>
+            </div>
+          </div>
+          <div class="row" id="baris3">
+            <div class="col img-col-3">
+              <img src="./Picture/espresso.jpg" alt="kopi espresso" width="500px">
+            </div>
+            <div class="col col-3">
+              <h1>Espresso</h1>
+              <p>Espreso adalah minuman yang dihasilkan dengan mengekstraksi biji kopi yang sudah digiling dengan menyemburkan air panas di bawah tekanan tinggi.</p>
+            </div>
+          </div>
+
+      </section>
+
+      <section class="footer">
+          <div class="row-ft" style="background-color: #fff;">
+            <div class="company-ft">
+                <h2>Company</h2>
+                <ul>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="product.html">Products</a></li>
+                </ul>
+            </div>
+
+            <div class="about-ft">
+                <h2>About</h2>
+                <ul>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="text-ft">
+                <h2>Ngopi Yuk</h2>
+                <p>Open from 8am - 10pm (WITA)</p>
+            </div>
+
+            <div class="logo-ft">
+               <a href="home.html"><img src="./Picture/logoKopi.png" alt="logo ngopi yuk" width="200px"></a>
+            </div>
+          </div>
+          <div class="garis"></div>
+          <div class="copyright">
+              <p>Copyright &copy 2021. Wahyu Dwi Prastika. All Right Reserved</p>
+          </div>
+      </section>
+
+
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+        window.onscroll = function(){
+            fixnavbar();
+            showProduct();
+            showProduct2();
+            showProduct3();
+        }
+
+        var navbar = document.querySelector("nav");
+        var navTop = navbar.offsetTop;
+
+        function fixnavbar(){
+            
+            if(window.pageYOffset > navTop){
+                navbar.classList.add("fixed-nav");
+            } else {
+                navbar.classList.remove("fixed-nav");
+            }
+        }
+
+        
+        var baris1 = document.getElementById("baris1");
+        var baris2 = document.getElementById("baris2");
+        var baris3 = document.getElementById("baris3");
+        var rTop1 = baris1.offsetTop;
+        var rTop2 = baris2.offsetTop;
+        var rTop3 = baris3.offsetTop;
+
+        function showProduct(){
+            if(window.pageYOffset >= (rTop1 - 400)){
+                baris1.classList.add("showRow");
+            } else {
+                baris1.classList.remove("showRow");
+            }
+        }
+
+        function showProduct2(){
+            if(window.pageYOffset >= (rTop2 - 700)){
+                baris2.classList.add("showRow");
+            } else {
+                baris2.classList.remove("showRow");
+            }
+        }
+
+        function showProduct3(){
+            if(window.pageYOffset >= (rTop3 - 700)){
+                baris3.classList.add("showRow");
+            } else {
+                baris3.classList.remove("showRow");
+            }
+        }
+        
+    </script>
+</body>
+</html>
